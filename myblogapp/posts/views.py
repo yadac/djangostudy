@@ -9,3 +9,8 @@ def index(request):
     # using templates
     # args = posts
     return render(request, 'posts/index.html', {'posts': posts})
+
+def post_detail(request, post_id):
+    # get function don't allow space between pk and pk-value
+    post = Post.objects.get(pk=post_id)
+    return render(request, 'posts/post_detail.html', {'post': post})
