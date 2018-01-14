@@ -9,6 +9,10 @@
 
         {% for post in posts.all %}
             {{ post.title }}
+            {{ post.published }}
+            {{ post.image }}
+            {{ post.body }}
+            <br>
         {% endfor %}
 
     </body>
