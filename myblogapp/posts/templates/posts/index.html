@@ -4,6 +4,12 @@
         <title>posts list</title>
     </head>
     <body>
-        <h2>this page is list of posts!!</h2>
+        <h1>Welcome to YADAC blog!!</h1>
+        <h2>Recently posts</h2>
+
+        {% for post in posts.all %}
+            {{ post.title }}
+        {% endfor %}
+
     </body>
 </html>
