@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^posts/', include('posts.urls')),
     # ?P is parameter
-    url(r'^posts/(?P<post_id>[0-9]+)/$', views.post_detail),    
+    # name is routing name
+    url(r'^posts/(?P<post_id>[0-9]+)/$',
+        views.post_detail, name='post_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
