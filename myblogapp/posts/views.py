@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Post
 
@@ -12,5 +12,5 @@ def index(request):
 
 def post_detail(request, post_id):
     # get function don't allow space between pk and pk-value
-    post = Post.objects.get(pk=post_id)
+    post = get_object_or_404(Post, pk = post_id)
     return render(request, 'posts/post_detail.html', {'post': post})
