@@ -22,6 +22,7 @@ from posts import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^posts/', include('posts.urls')),
+    url(r'^about/', include('about.urls')),
     # ?P is parameter
     # name is routing name
     url(r'^posts/(?P<post_id>[0-9]+)/$',
